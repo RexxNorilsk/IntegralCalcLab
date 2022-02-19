@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Lab1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+	<Grid>
+		<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="49,62,0,0" VerticalAlignment="Top" Height="62" Width="138"/>
 
-    </Grid>
+	</Grid>
 </Window>

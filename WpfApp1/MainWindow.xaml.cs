@@ -36,24 +36,26 @@ namespace WpfApp1
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
-            Integral integ = new Integral(double.Parse(LowerLimitEditBox.Text), double.Parse(UpperLimitEditBox.Text), double.Parse(SplitterEditBox.Text), FunctionEditBox.Text);
+            Integral integ = new Integral(double.Parse(LowerLimitEditBox.Text), double.Parse(UpperLimitEditBox.Text), double.Parse(SplitterEditBox.Text));
             double time = 0;
             int numberOfPartitions;
+            string type = ModeComboBox.SelectedValue.ToString();
             if (ModeComboBox.SelectedIndex == 0) MessageBox.Show(integ.CalculateSquireMethod(out time, out numberOfPartitions).ToString());
             else if (ModeComboBox.SelectedIndex == 1) MessageBox.Show(integ.CalculateTrapezoidMethod(out time).ToString());
             else if (ModeComboBox.SelectedIndex == 2) MessageBox.Show(integ.CalculateSimpsonMethod(out time).ToString());
         }
-        //public IList<DataPoint> Points { get; private set; }
         
         private void StartGraphicBtn_Click(object sender, RoutedEventArgs e)
         {
             PlotModel model = new PlotModel();
             LineSeries line = new LineSeries();
             model.Title = "11x-ln(11x)-2";
+            if (double.Parse(SplitterEditBox.Text) < 0f) SplitterEditBox.Text = SplitterEditBox.Text.Replace("-", "");
+            if (double.Parse(SplitterEditBox.Text) == 0f) SplitterEditBox.Text = "0,1";
             double counter = double.Parse(SplitterEditBox_grapMax.Text);
             while (counter >= double.Parse(SplitterEditBox_grapMin.Text))
             {
-                Integral integ = new Integral(double.Parse(LowerLimitEditBox.Text), double.Parse(UpperLimitEditBox.Text), counter, FunctionEditBox.Text);
+                Integral integ = new Integral(double.Parse(LowerLimitEditBox.Text), double.Parse(UpperLimitEditBox.Text), counter);
                 double time = 0;
                 int numberOfPartitions;
                 integ.CalculateSquireMethod(out time, out numberOfPartitions);

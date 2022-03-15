@@ -11,7 +11,6 @@ namespace WpfApp1
         double lowerLimit { get; set; }
         double upperLimit { get; set; }
         double spliting { get; set; }
-        string function { get; set; }
 
 
         double CalculateSquireMethod(out double time, out int numberOfPartitions, double offset);

@@ -11,24 +11,24 @@
         <local:MainViewModel/>
     </Window.DataContext>
     <Grid Width="530"  Height="500">
-        <Label x:Name="NameLabel" Content="Стахеев А.А. 3-46" HorizontalAlignment="Left" Margin="620,156,0,0" VerticalAlignment="Top" Height="24" Width="104" Opacity="0.25"/>
-        <Label x:Name="IntegralLabel" Content="∫" HorizontalAlignment="Left" Margin="60,30,0,0" VerticalAlignment="Top" FontSize="64" Height="98" Width="44"/>
-        <TextBox x:Name="UpperLimitEditBox" HorizontalAlignment="Left" Height="20" Margin="32,16,0,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" Width="72" RenderTransformOrigin="-0.414,0.674"/>
+        <Label x:Name="NameLabel" Content="Стахеев А.А. 3-46" Margin="416,161,10,0" VerticalAlignment="Top" Height="24" Opacity="0.25"/>
+        <Label x:Name="IntegralLabel" Content="∫" Margin="60,30,426,0" VerticalAlignment="Top" FontSize="64" Height="98"/>
+        <TextBox x:Name="UpperLimitEditBox" Height="20" Margin="32,16,426,0" TextWrapping="Wrap" Text="1000" VerticalAlignment="Top" RenderTransformOrigin="-0.414,0.674"/>
         <TextBox x:Name="LowerLimitEditBox" HorizontalAlignment="Left" Height="18" Margin="32,133,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="72"/>
         <TextBox x:Name="FunctionEditBox" HorizontalAlignment="Left" Height="21" Margin="116,74,0,0" TextWrapping="Wrap" Text="11x-ln(11x)-2" VerticalAlignment="Top" Width="156" IsEnabled="False"/>
-        <Button x:Name="StartBtn" Content="Начать вычисление" HorizontalAlignment="Left" Margin="313,100,0,0" VerticalAlignment="Top" Width="182" Height="24" Click="StartBtn_Click"/>
-        <Button x:Name="StartGraphicBtn" Content="Рассчитать график" HorizontalAlignment="Left" Margin="313,130,0,0" VerticalAlignment="Top" Width="182" Height="24" Click="StartGraphicBtn_Click"/>
-        <ComboBox x:Name="ModeComboBox" HorizontalAlignment="Left" Margin="313,71,0,0" VerticalAlignment="Top" Width="182" Height="24">
+        <Button x:Name="StartBtn" Content="Начать вычисление" Margin="313,74,35,0" VerticalAlignment="Top" Height="24" Click="StartBtn_Click"/>
+        <Button x:Name="StartGraphicBtn" Content="Рассчитать график" Margin="313,104,35,0" VerticalAlignment="Top" Height="24" Click="StartGraphicBtn_Click"/>
+        <ComboBox x:Name="ModeComboBox" Margin="313,45,35,0" VerticalAlignment="Top" Height="24">
             <ComboBoxItem Content="Средних прямоугольников" IsSelected="True"/>
             <ComboBoxItem Content="Трапеций"/>
             <ComboBoxItem Content="Симпсона"/>
         </ComboBox>
-        <TextBox x:Name="SplitterEditBox" HorizontalAlignment="Left" Height="18" Margin="349,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Text="0,1"/>
-        <Label Content="Шаг:" HorizontalAlignment="Left" Margin="313,40,0,0" VerticalAlignment="Top" Width="36"/>
-        <oxy:PlotView x:Name="Graf" Margin="10,185,10,10" />
-        <Label Content="Шаг от:" HorizontalAlignment="Left" Margin="313,154,0,0" VerticalAlignment="Top" Width="53"/>
-        <Label Content="до" HorizontalAlignment="Left" Margin="400,154,0,0" VerticalAlignment="Top" Width="32"/>
-        <TextBox x:Name="SplitterEditBox_grapMax" HorizontalAlignment="Left" Height="18" Margin="366,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="34" Text="1"/>
-        <TextBox x:Name="SplitterEditBox_grapMin" HorizontalAlignment="Left" Height="18" Margin="432,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Text="0,01"/>
+        <TextBox x:Name="SplitterEditBox" Height="18" Margin="349,18,35,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0,1"/>
+        <Label Content="Шаг:" Margin="313,14,181,0" VerticalAlignment="Top"/>
+        <oxy:PlotView x:Name="Graf" Margin="10,185,10,0" Height="305" VerticalAlignment="Top" />
+        <Label Content="Шаг от:" Margin="313,128,164,0" VerticalAlignment="Top"/>
+        <Label Content="до" Margin="400,128,98,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="SplitterEditBox_grapMax" Height="18" Margin="366,133,130,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="1"/>
+        <TextBox x:Name="SplitterEditBox_grapMin" Height="18" Margin="432,133,35,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0,01"/>
     </Grid>
 </Window>

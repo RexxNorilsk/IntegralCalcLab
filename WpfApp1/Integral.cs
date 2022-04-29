@@ -53,19 +53,17 @@ namespace WpfApp1
             return spliting * area;
         }
 
-        public double CalculateSimpsonMethod(out double time) {
+        public double CalculateRectangleMethod(out double time) {
             int N = (int)((upperLimit - lowerLimit) / spliting);
-            double area = CalculateFunctionInPoint(lowerLimit) + CalculateFunctionInPoint(upperLimit);
-            int k = 4;
+            double area = 0;
             for (int i = 0; i < N; i++)
             {
                 double currentX = lowerLimit + spliting * i;
-                area += k*CalculateFunctionInPoint(currentX);
-                k = 6-k;
+                area += CalculateFunctionInPoint(currentX);
             }
-            area *= spliting / 3;
+            area += (CalculateFunctionInPoint(lowerLimit) + CalculateFunctionInPoint(upperLimit)) / 2;
             time = 0;
-            return area;
+            return spliting * area;
         }
 
         public double CalculateFunctionInPoint(double point) {
